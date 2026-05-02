@@ -1,0 +1,4 @@
+jamesph\TaskManager\model\User.class
+jamesph\TaskManager\model\common\BaseModel.class
+jamesph\TaskManager\TaskManagerApplication.class
+jamesph\TaskManager\model\Task.class
