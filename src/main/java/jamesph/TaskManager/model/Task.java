@@ -5,7 +5,12 @@ import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jamesph.TaskManager.model.common.BaseModel;
 import lombok.Getter;
@@ -18,19 +23,29 @@ import lombok.Setter;
 public class Task extends BaseModel {
 
   @Id
-  @Column(name = "`uuid`", insertable = true, updatable = false, nullable = false)
+  @GeneratedValue(strategy = GenerationType.UUID)
   private UUID uuid;
 
   @Column(name = "title", length = 50, nullable = false)
   private String title;
 
-  @Column(name = "description", nullable = false)
+  @Column(name = "description")
   private String description;
 
-  @Column(name = "dueOnDate", nullable = false)
+  @Column(name = "due_on_date")
   private LocalDate dueOnDate;
 
-  @Column(name = "ownerUuid", nullable = false)
-  private UUID ownerUuid;
+  @Column(name = "status", length = 3, nullable = false)
+  private String status;
+
+  @Column(name = "priority", length = 2, nullable = false)
+  private String priority;
+
+  // @Column(name = "owner_uuid", nullable = false)
+  // private UUID ownerUuid;
+
+  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @JoinColumn(name = "owner_uuid")
+  private Users owner;
 
 }

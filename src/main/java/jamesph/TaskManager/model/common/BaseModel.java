@@ -11,6 +11,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BaseModel {
+
+  //TODO check if status is eligable here on BaseModel with H2 database
+  // @Column(name = "status", insertable = false)
+  // private String status;
+
   @CreatedDate
   private Instant createdAt;
 
