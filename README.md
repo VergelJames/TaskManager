@@ -5,7 +5,7 @@ A comprehensive Spring Boot application providing RESTful APIs for efficient tas
 ## 📋 Table of Contents
 
 - [Overview](#overview)
-- [Features](#✨ features)
+- [Features](#features)
 - [Technology Stack](#technology-stack)
 - [Prerequisites](#prerequisites)
 - [Installation & Setup](#installation--setup)
@@ -23,7 +23,7 @@ A comprehensive Spring Boot application providing RESTful APIs for efficient tas
 
 TaskManager is a robust RESTful API service built with Spring Boot that enables users to manage their tasks and profiles. The application supports multiple concurrent users with secure authentication mechanisms and provides paginated responses for better performance and scalability.
 
-## ✨ Features
+## Features
 
 - **User Management**: Create, read, update, and delete user profiles
 - **Task Management**: Full CRUD operations on tasks with pagination support
